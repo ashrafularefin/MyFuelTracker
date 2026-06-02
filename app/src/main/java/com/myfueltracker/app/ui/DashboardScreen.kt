@@ -351,7 +351,7 @@ fun DashboardScreen(
                         value = latestService?.serviceType ?: "No Records",
                         date = latestService?.date,
                         odometer = latestService?.let { "Odo: ${it.odoReading} $distanceUnit" },
-                        location = latestService?.serviceCenter?.takeIf { it.isNotBlank() },
+                        location = latestService?.centerName?.takeIf { it.isNotBlank() },
                         icon = Icons.Default.Handyman,
                         gradientColors = listOf(Color(0xFFF1F8E9), Color(0xFFb6d7a8)),
                         iconColor = Color(0xFF2E7D32)
