@@ -338,6 +338,10 @@ fun HistoryDetailDialog(
                             val dateFormatted = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date(log.date))
 
                             DetailItemRow(label = "Date", value = dateFormatted)
+
+                            if (!log.serviceCenter.isNullOrBlank()) {
+                                DetailItemRow(label = "Service Center", value = log.serviceCenter)
+                            }
                             DetailItemRow(label = "Service Task Type", value = log.serviceType)
                             DetailItemRow(label = "Odometer Reading", value = "${log.odoReading} $distanceUnit")
                             DetailItemRow(label = "Total Maintenance Cost", value = "$currency${String.format("%.2f", log.cost)}")
